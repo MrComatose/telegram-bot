@@ -23,6 +23,9 @@ class Startup {
          this._bot.getUpdates(req.body);
          res.sendStatus(200);
       });
+      app.get('/', (req, res) => {
+         res.sendJson({status: "Working"});
+      });
    }
 }
 module.exports = Startup;
