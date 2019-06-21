@@ -9,7 +9,7 @@ class Startup {
    setupTelegramBot() {
       this._bot = new TelegramBot(process.env.TOKEN);
       console.log(process.env.TOKEN);
-      this._bot.setWebHook(this._config.telegram.webhookUrl);
+      this._bot.setWebHook(this._config.telegram.webhookUrl + '/' + process.env.TOKEN);
       this._bot.on('message', msg => {
          bot.sendMessage(msg.chat.id, 'I am alive!');
        });
