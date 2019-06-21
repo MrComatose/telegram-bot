@@ -4,16 +4,22 @@
   "description": "Uselles telegram bot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node .",
+    "build": "echo 'building...'",
+    "deploy": "now --token $Now_Token"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/MrComatose/telegram-bot.git"
   },
-  "author": "Alexander Parovenko",
+  "author": "AlexanderParovenko",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MrComatose/telegram-bot/issues"
   },
-  "homepage": "https://github.com/MrComatose/telegram-bot#readme"
+  "homepage": "https://github.com/MrComatose/telegram-bot#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "now": "^15.5.0"
+  }
 }
