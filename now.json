@@ -4,6 +4,9 @@
   "builds": [
     { "src": "config/*", "use": "@now/static" },
     { "src": "*.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/852467152:AAHyp74eo4_vifYn71fKf3hprVPNCcW1P9Q", "dest": "index.js" }
   ]
   
 }

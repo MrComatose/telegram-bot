@@ -5,5 +5,5 @@ const Startup = require('./startup');
 const setup = new Startup(config);
 const app = express();
 setup.setupMiddleware(app);
-app.listen(3000, () => console.log('listening 3000 port'));
+app.listen(8443, () => console.log('listening 8443 port'));
 module.exports = app;

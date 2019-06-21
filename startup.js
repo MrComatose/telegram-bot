@@ -6,26 +6,32 @@ class Startup {
       this._config = config;
    }
 
-   setupTelegramBot() {
-      this._bot = new TelegramBot(process.env.TOKEN);
+   async setupTelegramBot() {
+      console.log(this._config);
+      this._bot = new TelegramBot(this._config.telegram.token);
       console.log(process.env.TOKEN);
-      this._bot.setWebHook(this._config.telegram.webhookUrl + '/' + process.env.TOKEN);
+      await this._bot.setWebHook(this._config.telegram.webhookUrl);
+
+     this._bot.onText(/[^0-9][^0-9]-[0-9][0-9]/, (msg,rgx)=> {
+      this._bot.sendMessage(msg.chat.id,'kek');
+      
+   })
       this._bot.on('message', msg => {
-         bot.sendMessage(msg.chat.id, 'I am alive!');
-       });
+         this._bot.sendMessage(msg.chat.id, 'I am alive!');
+      });
    }
 
    setupMiddleware(app) {
-      this.setupTelegramBot();
+      this.setupTelegramBot().then(() => {
+         console.log(this._bot)
+         app.post('/852467152:AAHyp74eo4_vifYn71fKf3hprVPNCcW1P9Q', (req, res) => {
+            this._bot.processUpdate(req.body);
+            res.sendStatus(200);
+         });
+         app.get('/', (req, res) => {
+            res.json({ status: "Working" });
+         });
 
-      app.use(bodyParser.json());
-
-      app.post('/', (req, res) => {
-         this._bot.getUpdates(req.body);
-         res.sendStatus(200);
-      });
-      app.get('/', (req, res) => {
-         res.sendJson({status: "Working"});
       });
    }
 }
