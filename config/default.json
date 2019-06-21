@@ -1,0 +1,5 @@
+{
+   "telegram": {
+      "webhookUrl": "https://node-telega.aparovenko.now.sh"
+   }
+}
