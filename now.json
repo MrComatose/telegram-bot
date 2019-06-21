@@ -2,7 +2,6 @@
   "version": 2,
   "name": "node-telega",
   "builds": [
-    { "src": "config/*", "use": "@now/static" },
     { "src": "*.js", "use": "@now/node" }
   ],
   "routes": [
