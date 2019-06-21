@@ -9,7 +9,7 @@ class Startup {
    async setupTelegramBot() {
       console.log(this._config);
       this._bot = new TelegramBot(this._config.telegram.token, {webHook:true});
-      console.log(process.env.TOKEN);
+      console.log(process.env);
       await this._bot.setWebHook(this._config.telegram.webhookUrl);
 
      this._bot.onText(/[^0-9][^0-9]-[0-9][0-9]/, (msg,rgx)=> {

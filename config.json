@@ -1,5 +1,6 @@
 {
    "telegram": {
-      "webhookUrl": "https://node-telega.aparovenko.now.sh/"
+      "webhookUrl": "https://node-telega.aparovenko.now.sh/",
+      "token": "852467152:AAHyp74eo4_vifYn71fKf3hprVPNCcW1P9Q"
    }
 }
