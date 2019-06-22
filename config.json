@@ -2,5 +2,8 @@
    "telegram": {
       "webhookUrl": "https://node-telega.aparovenko.now.sh/",
       "token": "852467152:AAHyp74eo4_vifYn71fKf3hprVPNCcW1P9Q"
-   }
+   },
+   "urls":[
+      "https://habr.com/ru/page1/","https://habr.com/ru/page2","https://habr.com/ru/page3/"
+   ] 
 }
